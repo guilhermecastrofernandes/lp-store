@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication 
+@SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan(basePackages={"com.lp.store"})
 @EnableJpaRepositories(basePackages="com.lp.store.repositories")

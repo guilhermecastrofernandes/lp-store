@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Update LP's</title>
+        <title>Add LP</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -11,10 +11,10 @@
     </head>
     <body>
         <div class="container my-5">
-            <h2 class="mb-5">Update LPs</h2>
+            <h2 class="mb-5">New Long Play</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <form action="#" th:action="@{/update/{id}(id=${longPlay.id})}" th:object="${longPlay}" method="post">
+                    <form action="#" th:action="@{/addlp}" th:object="${longPlay}" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name" class="col-form-label">Name</label>
@@ -26,10 +26,26 @@
                                 <input type="text" th:field="*{author}" class="form-control" id="author" placeholder="Author">
                                 <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="text-danger"></span>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label for="style" class="col-form-label">Style</label>
+                                <input type="text" th:field="*{style}" class="form-control" id="style" placeholder="Style">
+                                <span th:if="${#fields.hasErrors('style')}" th:errors="*{style}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="style" class="col-form-label">Price</label>
+                                <input type="text" th:field="*{price}" class="form-control" id="price" placeholder="Price">
+                                <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="style" class="col-form-label">Released Year</label>
+                                <input type="text" th:field="*{releasedYear}" class="form-control" id="releasedYear" placeholder="Style">
+                                <span th:if="${#fields.hasErrors('releasedYear')}" th:errors="*{releasedYear}" class="text-danger"></span>
+                            </div>
+
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-5">
-                                <input type="submit" class="btn btn-primary" value="Update LPs">
+                                <input type="submit" class="btn btn-primary" value="Add LP">
                             </div>
                         </div>    
                     </form>
