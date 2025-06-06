@@ -26,6 +26,21 @@
                                 <input type="text" th:field="*{author}" class="form-control" id="author" placeholder="Author">
                                 <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="text-danger"></span>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label for="style" class="col-form-label">Style</label>
+                                <input type="text" th:field="*{style}" class="form-control" id="style" placeholder="Style">
+                                <span th:if="${#fields.hasErrors('style')}" th:errors="*{style}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="style" class="col-form-label">Price</label>
+                                <input type="text" th:field="*{price}" class="form-control" id="price" placeholder="Price">
+                                <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="style" class="col-form-label">Released Year</label>
+                                <input type="text" th:field="*{releasedYear}" class="form-control" id="releasedYear" placeholder="Released Year">
+                                <span th:if="${#fields.hasErrors('releasedYear')}" th:errors="*{releasedYear}" class="text-danger"></span>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mt-5">

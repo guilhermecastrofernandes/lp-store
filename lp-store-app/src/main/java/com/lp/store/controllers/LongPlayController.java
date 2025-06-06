@@ -34,15 +34,15 @@ public class LongPlayController {
         }
          
         longPlayRepository.save(longPlay);
-        model.addAttribute("longPlay", longPlayRepository.findAll());
+        model.addAttribute("lps", longPlayRepository.findAll());
         return "index";
     }
-    
+
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         LongPlay longPlay = longPlayRepository.findById(id)
-          .orElseThrow(() -> new IllegalArgumentException("Invalid long play Id:" + id));
-        model.addAttribute("longPlay", longPlay);
+                .orElseThrow(() -> new IllegalArgumentException("Invalid long play Id:" + id));
+        model.addAttribute("longPlay", longPlay); //
         return "update-lp";
     }
     @PostMapping("/update/{id}")
@@ -54,7 +54,7 @@ public class LongPlayController {
         }
              
         longPlayRepository.save(longPlay);
-        model.addAttribute("longPlay", longPlayRepository.findAll());
+        model.addAttribute("lps", longPlayRepository.findAll());
         return "index";
     }
          
@@ -63,7 +63,7 @@ public class LongPlayController {
         LongPlay longPlay = longPlayRepository.findById(id)
           .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         longPlayRepository.delete(longPlay);
-        model.addAttribute("longPlay", longPlayRepository.findAll());
+        model.addAttribute("lps", longPlayRepository.findAll());
         return "index";
     }
 
